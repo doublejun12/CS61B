@@ -5,7 +5,6 @@ public class Planet {
     public double yyVel; //Its current velocity in the y direction
     public double mass; //Its mass
     public String imgFileName; //The name of the file that corresponds to the image that depicts the planet
-    public static final double graviCons = 6.67e-11;
 
     /**
     A constructor
@@ -44,6 +43,7 @@ public class Planet {
     Calculating the force exerted on this planet by the given planet
      */
     public double calcForceExertedBy(Planet p) {
+        static final double graviCons = 6.67e-11;
         double dist = this.calcDistance(p);
         double force = (graviCons * mass * p.mass) / (dist * dist);
         return force;
