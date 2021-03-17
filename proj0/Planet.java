@@ -5,7 +5,7 @@ public class Planet {
     public double yyVel; //Its current velocity in the y direction
     public double mass; //Its mass
     public String imgFileName; //The name of the file that corresponds to the image that depicts the planet
-    static final double graviCons = 6.67e-11;
+    public static final double graviCons = 6.67e-11;
 
     /**
     A constructor
