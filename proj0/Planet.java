@@ -43,7 +43,7 @@ public class Planet {
     Calculating the force exerted on this planet by the given planet
      */
     public double calcForceExertedBy(Planet p) {
-        static final double graviCons = 6.67e-11;
+        double graviCons = 6.67e-11;
         double dist = this.calcDistance(p);
         double force = (graviCons * mass * p.mass) / (dist * dist);
         return force;
