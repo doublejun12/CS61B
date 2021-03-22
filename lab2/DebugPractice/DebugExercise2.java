@@ -42,26 +42,28 @@ public class DebugExercise2 {
      * and b = {0, 20, 5}, this function will return {1, 20, 5}.
      * */
     public static int[] arrayMax(int[] a, int[] b) {
-        if (a.length != b.length) {
-            System.out.println("ERROR! Arrays don't match");
+        if(a.length != b.length) {
+            System.out.println("Length doesn't match!");
             return null;
         }
-        int[] returnArray = new int[a.length];
-        for (int i = 0; i < a.length; i += 1) {
-            int biggerValue = max(a[i], b[i]);
-            returnArray[i] = biggerValue;
+
+        int[] ansArray = new int[a.length];
+        for(int i = 0; i < a.length; i++) {
+            if(a[i] > b[i]) {
+                ansArray[i] = a[i];
+            } else {
+                ansArray[i] = b[i];
+            }
         }
 
-        return returnArray;
+        return ansArray;
     }
 
     /** Returns the sum of all elements in x. */
     public static int arraySum(int[] x) {
-        int i = 0;
         int sum = 0;
-        while (i < x.length) {
-            sum = sum + add(sum, x[i]);
-            i = i + 1;
+        for (int j : x) {
+            sum += j;
         }
         return sum;
     }
