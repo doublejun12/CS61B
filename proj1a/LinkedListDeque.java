@@ -1,10 +1,10 @@
-public class LinkedListDeque<genericType> {
+public class LinkedListDeque<T> {
     private class IntNode {
-        public genericType item;
-        public IntNode next;
-        public IntNode prev;
+        private T item;
+        private IntNode next;
+        private IntNode prev;
 
-        public IntNode(genericType item, IntNode next, IntNode prev) {
+        public IntNode(T item, IntNode next, IntNode prev) {
             this.item = item;
             this.next = next;
             this.prev = prev;
@@ -21,7 +21,7 @@ public class LinkedListDeque<genericType> {
         size = 0;
     }
 
-    public void addFirst(genericType item) {
+    public void addFirst(T item) {
         size++;
         IntNode newNode = new IntNode(item, sentinel.next, sentinel);
         sentinel.next = newNode;
@@ -29,7 +29,7 @@ public class LinkedListDeque<genericType> {
 
     }
 
-    public void addLast(genericType item) {
+    public void addLast(T item) {
         size++;
         IntNode newNode = new IntNode(item, sentinel, sentinel.prev);
         sentinel.prev = newNode;
@@ -53,41 +53,41 @@ public class LinkedListDeque<genericType> {
         }
     }
 
-    public genericType removeFirst() {
-        if(size == 0) {
+    public T removeFirst() {
+        if (size == 0) {
             return null;
         }
 
         size--;
 
-        genericType item = sentinel.next.item;
+        T item = sentinel.next.item;
         sentinel.next = sentinel.next.next;
         sentinel.next.prev = sentinel;
 
         return item;
     }
 
-    public genericType removeLast() {
-        if(size == 0) {
+    public T removeLast() {
+        if (size == 0) {
             return null;
         }
 
         size--;
 
-        genericType item = sentinel.prev.item;
+        T item = sentinel.prev.item;
         sentinel.prev = sentinel.prev.prev;
         sentinel.prev.next = sentinel;
 
         return item;
     }
 
-    public genericType get(int index) {
+    public T get(int index) {
         IntNode ptr = sentinel;
         int i = 0;
-        while(ptr.next != sentinel) {
+        while (ptr.next != sentinel) {
 
             ptr = ptr.next;
-            if(i == index) {
+            if (i == index) {
                 return ptr.item;
             }
             i++;
@@ -96,7 +96,7 @@ public class LinkedListDeque<genericType> {
         return null;
     }
 
-    public genericType getRecursive(int index) {
+    public T getRecursive(int index) {
         return null;
     }
 }
