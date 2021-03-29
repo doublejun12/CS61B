@@ -1,4 +1,3 @@
-import java.util.Objects;
 
 public class ArrayDeque<T> {
 
@@ -98,7 +97,7 @@ public class ArrayDeque<T> {
             return null;
         }
 
-        if(last == 0) {
+        if (last == 0) {
             last = items.length - 1;
         } else {
             last--;
@@ -120,7 +119,7 @@ public class ArrayDeque<T> {
         return items[(first + index + 1) % items.length];
     }
 
-    /**public static void main(String[] args) {
+    public static void main(String[] args) {
         ArrayDeque<Integer> A = new ArrayDeque<>();
         for (int i = 0; i <1000; i++) {
             A.addLast(i);
@@ -130,6 +129,5 @@ public class ArrayDeque<T> {
         }
         A.printDeque();
 
-        System.out.print();
-    }*/
+    }
 }

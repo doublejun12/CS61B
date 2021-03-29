@@ -101,13 +101,13 @@ public class LinkedListDeque<T> {
         if (size == 0 || index > size - 1) {
             return null;
         }
-        return _getRecursive(index, sentinel.next);
+        return getRecursivehelper(index, sentinel.next);
     }
 
-    private T _getRecursive(int index, IntNode p) {
+    private T getRecursivehelper(int index, IntNode p) {
         if (index == 0) {
             return p.item;
         }
-        return _getRecursive(index - 1, p.next);
+        return getRecursivehelper(index - 1, p.next);
     }
 }
