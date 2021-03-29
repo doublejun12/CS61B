@@ -118,16 +118,4 @@ public class ArrayDeque<T> {
 
         return items[(first + index + 1) % items.length];
     }
-
-    public static void main(String[] args) {
-        ArrayDeque<Integer> A = new ArrayDeque<>();
-        for (int i = 0; i <1000; i++) {
-            A.addLast(i);
-        }
-        for (int i = 0; i <998; i++) {
-            A.removeFirst();
-        }
-        A.printDeque();
-
-    }
 }
