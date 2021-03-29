@@ -97,6 +97,17 @@ public class LinkedListDeque<T> {
     }
 
     public T getRecursive(int index) {
-        return null;
+
+        if (size == 0 || index > size - 1) {
+            return null;
+        }
+        return _getRecursive(index, sentinel.next);
+    }
+
+    private T _getRecursive(int index, IntNode p) {
+        if (index == 0) {
+            return p.item;
+        }
+        return _getRecursive(index - 1, p.next);
     }
 }
