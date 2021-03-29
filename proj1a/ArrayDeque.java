@@ -86,6 +86,9 @@ public class ArrayDeque<T> {
         T itemFirst = items[first];
         size--;
 
+        if ((double) size / items.length < 0.25) {
+            resize(items.length / 2);
+        }
         return itemFirst;
 
     }
@@ -103,6 +106,9 @@ public class ArrayDeque<T> {
         T itemLast = items[last];
         size--;
 
+        if ((double) size / items.length < 0.25) {
+            resize(items.length / 2);
+        }
         return itemLast;
     }
 
@@ -114,11 +120,16 @@ public class ArrayDeque<T> {
         return items[(first + index + 1) % items.length];
     }
 
-    public static void main(String[] args) {
+    /**public static void main(String[] args) {
         ArrayDeque<Integer> A = new ArrayDeque<>();
-        A.addFirst(100);
-        A.addLast(30);
-        A.addLast(20);
-        System.out.print(A.removeFirst());
-    }
+        for (int i = 0; i <1000; i++) {
+            A.addLast(i);
+        }
+        for (int i = 0; i <998; i++) {
+            A.removeFirst();
+        }
+        A.printDeque();
+
+        System.out.print();
+    }*/
 }
