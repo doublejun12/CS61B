@@ -71,8 +71,8 @@ public class ArrayDeque<T> {
             return null;
         }
 
-        T itemFirst = items[first];
         first = (first + 1) % items.length;
+        T itemFirst = items[first];
         size--;
 
         return itemFirst;
@@ -84,12 +84,12 @@ public class ArrayDeque<T> {
             return null;
         }
 
-        T itemLast = items[last];
         if(last == 0) {
             last = items.length - 1;
         } else {
             last--;
         }
+        T itemLast = items[last];
         size--;
 
         return itemLast;
@@ -103,10 +103,10 @@ public class ArrayDeque<T> {
         return items[(first + index + 1) % items.length];
     }
 
-    public static void main(String[] args) {
+    /**public static void main(String[] args) {
         ArrayDeque<Integer> A = new ArrayDeque<>();
         A.addFirst(100);
         A.addLast(30);
-        System.out.print(A.size());
-    }
+        System.out.print(A.removeFirst());
+    }*/
 }
